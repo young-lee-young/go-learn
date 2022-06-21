@@ -1,29 +1,13 @@
 package main
 
-import (
-	"fmt"
-	"runtime"
-)
-
 func main() {
-	runtime.GOMAXPROCS(1)
-	for i := 0; i < 10; i ++ {
-		i := i
-		go func() {
-			fmt.Println("A: ", i)
-		}()
-	}
+	var sl = make([]int, 100000)
+	println(sl)
 
-	var ch = make(chan int)
-	<- ch
+	var ch = make(chan int, 5)
+	println(ch)
 
-	//runtime.GOMAXPROCS(1)
-	//for i := 0; i < 10; i ++ {
-	//	i := i
-	//	go func() {
-	//		fmt.Println("A: ", i)
-	//	}()
-	//}
-	//
-	//time.Sleep(time.Hour * 1)
+	var m = make(map[int]int, 22)
+	println(m)
+
 }
